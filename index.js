@@ -1,5 +1,6 @@
-const puppeteer = require('puppeteer');
 const dotenv = require('dotenv');
+const moment = require('moment');
+const puppeteer = require('puppeteer');
 
 dotenv.config();
 
@@ -184,6 +185,11 @@ const { WIFI_CODE = "NO", EMAIL = "contact@rayriffy.com" } = process.env;
   await page.click('.navTable > tbody > tr > td > #ContentPlaceHolder1_btnSubmit')
   
   await navigationPromise
+
+  await page.screenshot({
+    path: 'screenshot/' + moment().format('YYYYMMDD-HHmmss'),
+    type: 'png'
+  })
   
   await browser.close()
 })()
