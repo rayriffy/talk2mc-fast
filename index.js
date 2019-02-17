@@ -131,7 +131,7 @@ const { WIFI_CODE = "NO", EMAIL = "contact@rayriffy.com" } = process.env;
   await page.click('.masterStyle > #bk-ground > #page-wrap > #reportComponentDiv6224 > div')
   
   await page.waitForSelector('.masterStyle > #bk-ground > #page-wrap > #reportComponentDiv6202 > #ContentPlaceHolder1_surveyQtnRepeater_ctl00_3_txtResp_3')
-  await page.click('.masterStyle > #bk-ground > #page-wrap > #reportComponentDiv6202 > #ContentPlaceHolder1_surveyQtnRepeater_ctl00_3_txtResp_3')
+  await page.type('.emailTable > .emailRow > .emailCell > div > #ContentPlaceHolder1_txtResp', 'Good')
   
   await page.waitForSelector('.navTable > tbody > tr > td > #ContentPlaceHolder1_btnNext')
   await page.click('.navTable > tbody > tr > td > #ContentPlaceHolder1_btnNext')
