@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const { WIFI_CODE = "NO" } = process.env;
+const { WIFI_CODE = "NO", EMAIL = "contact@rayriffy.com" } = process.env;
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -178,7 +178,7 @@ const { WIFI_CODE = "NO" } = process.env;
   await navigationPromise
   
   await page.waitForSelector('.emailTable > .emailRow > .emailCell > div > #ContentPlaceHolder1_txtResp')
-  await page.click('.emailTable > .emailRow > .emailCell > div > #ContentPlaceHolder1_txtResp')
+  await page.type('.emailTable > .emailRow > .emailCell > div > #ContentPlaceHolder1_txtResp', EMAIL)
   
   await page.waitForSelector('.navTable > tbody > tr > td > #ContentPlaceHolder1_btnSubmit')
   await page.click('.navTable > tbody > tr > td > #ContentPlaceHolder1_btnSubmit')
